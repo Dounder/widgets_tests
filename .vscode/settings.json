@@ -1,0 +1,19 @@
+{
+  "search.exclude": {
+    "**/.vscode": true,
+    "**/.dart_tool/": true,
+    "**/android/app/.cxx/": true,
+    "**/android/.gradle/": true,
+    "**/ios/Runner/Assets.xcassets/": true,
+    "**/ios/Runner/Base.Iproj": true,
+    "**/data": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/public": true,
+    "**/build": true,
+    "**/arcgis_maps_core": true,
+    "**/ios/.symlinks": true,
+    "**/ios/Pods": true
+  }
+}
