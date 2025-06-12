@@ -9,4 +9,9 @@ final List<AppRoute> appRoutes = [
     title: 'Charts',
     icon: Icons.show_chart_rounded,
   ),
+  AppRoute(
+    path: ExpandableList.name,
+    title: 'Expandable List',
+    icon: Icons.list_rounded,
+  ),
 ];

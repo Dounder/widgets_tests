@@ -1,9 +1,6 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '16.0'
 
-# Add source repository for sqlite3
-source 'https://github.com/CocoaPods/Specs.git'
-
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
@@ -35,7 +32,6 @@ target 'Runner' do
 
   pod 'Runtimecore', :podspec => '../arcgis_maps_core/ios/Runtimecore.podspec'
   pod 'arcgis_maps_ffi', :podspec => '../arcgis_maps_core/ios/arcgis_maps_ffi.podspec'
-  pod 'sqlite3', '~> 3.49.2'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do

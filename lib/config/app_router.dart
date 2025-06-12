@@ -24,5 +24,10 @@ List<RouteBase> _buildRoutes() {
       name: ChartScreen.name,
       builder: (context, state) => const ChartScreen(),
     ),
+    GoRoute(
+      path: '/expandable_list',
+      name: ExpandableList.name,
+      builder: (context, state) => const ExpandableList(),
+    ),
   ];
 }

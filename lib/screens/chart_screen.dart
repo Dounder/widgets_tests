@@ -49,13 +49,14 @@ class ChartScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 CustomSegmentedBar(
-                  values: ChartData.getSegmentedBarValues(),
-                  colors:
-                      ChartData.getSegmentedBarValues()
-                          .asMap()
-                          .entries
-                          .map((entry) => ColorHelper.fromIndex(entry.key))
-                          .toList(),
+                  values: [20.0, 25.0, 15.0, 30.0, 10.0],
+                  colors: [
+                    colors.primary,
+                    colors.secondary,
+                    colors.tertiary,
+                    colors.error,
+                    colors.onSurface,
+                  ],
                 ),
 
                 const SizedBox(height: 10),
