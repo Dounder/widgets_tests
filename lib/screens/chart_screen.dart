@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_test/data/data.dart';
-import 'package:widgets_test/helpers/color_helper.dart';
 import 'package:widgets_test/widgets/widgets.dart';
 
 class ChartScreen extends StatelessWidget {

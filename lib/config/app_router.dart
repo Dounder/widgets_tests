@@ -1,4 +1,8 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
+import 'package:widgets_test/blocs/blocs.dart';
+import 'package:widgets_test/config/locator.dart';
 import 'package:widgets_test/screens/screens.dart';
 
 final appRouter = GoRouter(
@@ -29,5 +33,38 @@ List<RouteBase> _buildRoutes() {
       name: ExpandableList.name,
       builder: (context, state) => const ExpandableList(),
     ),
+    GoRoute(
+      path: '/nested',
+      name: NestedScreen.name,
+      builder:
+          (context, state) => BlocProvider(
+            create: (_) => locator<NestedNavigationCubit>(),
+            child: const NestedScreen(),
+          ),
+    ),
   ];
 }
+
+final nestedRouter = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      name: NestedScreenOne.name,
+      builder: (context, state) => NestedScreenOne(),
+      routes: [
+        GoRoute(
+          path: 'two',
+          name: NestedScreenTwo.name,
+          builder: (context, state) => NestedScreenTwo(),
+          routes: [
+            GoRoute(
+              path: 'three',
+              name: NestedScreenThree.name,
+              builder: (context, state) => NestedScreenThree(),
+            ),
+          ],
+        ),
+      ],
+    ),
+  ],
+);

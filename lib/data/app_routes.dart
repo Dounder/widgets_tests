@@ -14,4 +14,9 @@ final List<AppRoute> appRoutes = [
     title: 'Expandable List',
     icon: Icons.list_rounded,
   ),
+  AppRoute(
+    path: NestedScreen.name,
+    title: 'Nested Screen',
+    icon: Icons.picture_in_picture_alt_rounded,
+  ),
 ];
