@@ -19,4 +19,9 @@ final List<AppRoute> appRoutes = [
     title: 'Nested Screen',
     icon: Icons.picture_in_picture_alt_rounded,
   ),
+  AppRoute(
+    path: CustomTabsScreen.name,
+    title: 'Custom Tabs',
+    icon: Icons.tab_rounded,
+  ),
 ];

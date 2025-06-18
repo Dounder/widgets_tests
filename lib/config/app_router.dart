@@ -42,6 +42,11 @@ List<RouteBase> _buildRoutes() {
             child: const NestedScreen(),
           ),
     ),
+    GoRoute(
+      path: '/custom_tabs',
+      name: CustomTabsScreen.name,
+      builder: (context, state) => const CustomTabsScreen(),
+    ),
   ];
 }
 
