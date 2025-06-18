@@ -60,6 +60,41 @@ const List<LineChartCoord> points = [
     labelY: '1',
     color: ColorsData.severityControlled,
   ),
+  LineChartCoord(
+    x: 5,
+    y: 1,
+    labelX: '30/5',
+    labelY: '1',
+    color: ColorsData.severityControlled,
+  ),
+  LineChartCoord(
+    x: 6,
+    y: 1,
+    labelX: '31/5',
+    labelY: '1',
+    color: ColorsData.severityControlled,
+  ),
+  LineChartCoord(
+    x: 7,
+    y: 1,
+    labelX: '32/5',
+    labelY: '1',
+    color: ColorsData.severityControlled,
+  ),
+  LineChartCoord(
+    x: 4,
+    y: 1,
+    labelX: '33/5',
+    labelY: '1',
+    color: ColorsData.severityControlled,
+  ),
+  LineChartCoord(
+    x: 4,
+    y: 1,
+    labelX: '34/5',
+    labelY: '1',
+    color: ColorsData.severityControlled,
+  ),
 ];
 
 class ChartData {

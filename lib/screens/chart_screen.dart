@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets_test/data/data.dart';
 import 'package:widgets_test/widgets/widgets.dart';
@@ -40,6 +41,46 @@ class ChartScreen extends StatelessWidget {
                   data: [ChartData.getMaxPoints()],
                   xAxisLabels: ChartData.getLabelsX(),
                   barColor: colors.primary,
+                ),
+
+                const SizedBox(height: 10),
+                Text(
+                  'Bar Chart with Grouped Data',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                CustomBarChart(
+                  data: [
+                    BarChartGroupData(
+                      x: 0,
+                      barRods: [
+                        BarChartRodData(
+                          toY: 1,
+                          color: Theme.of(context).colorScheme.primary,
+                          width: 10,
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                        BarChartRodData(
+                          toY: 2,
+                          color: Theme.of(context).colorScheme.secondary,
+                          width: 10,
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                        BarChartRodData(
+                          toY: 3,
+                          color: Theme.of(context).colorScheme.tertiary,
+                          width: 10,
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                        BarChartRodData(
+                          toY: 4,
+                          color: Theme.of(context).colorScheme.error,
+                          width: 10,
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ],
+                    ),
+                  ],
+                  xAxisLabels: ['Jan', 'Feb', 'Mar'],
                 ),
 
                 const SizedBox(height: 10),
