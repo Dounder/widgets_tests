@@ -9,20 +9,65 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
-linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at https://dart.dev/lints.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
-  rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
 
+linter:
+  rules:
+    # STYLE RULES (like Prettier)
+    prefer_single_quotes: true # Use single quotes instead of double
+    require_trailing_commas: true # Force trailing commas (like Prettier)
+    lines_longer_than_80_chars: false # Disable line length warnings (formatter handles this)
+
+    # FORMATTING RULES
+    prefer_const_constructors: true # Use const when possible
+    prefer_const_declarations: true # Use const for local variables
+    prefer_const_literals_to_create_immutables: true
+    avoid_print: false # Allow print statements
+
+    # QUOTE AND STRING RULES
+    unnecessary_string_interpolations: true # Avoid unnecessary ${} in strings
+    prefer_interpolation_to_compose_strings: true # Use interpolation instead of +
+    unnecessary_string_escapes: true # Remove unnecessary escapes
+
+    # IMPORT AND EXPORT RULES
+    always_use_package_imports: true # Use package imports instead of relative
+    directives_ordering: true # Order imports/exports properly
+
+    # CONSTRUCTOR AND CLASS RULES
+    prefer_final_fields: true # Use final for fields that don't change
+    prefer_final_locals: true # Use final for local variables
+    prefer_final_in_for_each: true # Use final in for-each loops
+
+    # BOOLEAN AND CONDITIONAL RULES
+    prefer_is_empty: true # Use isEmpty instead of length == 0
+    prefer_is_not_empty: true # Use isNotEmpty instead of length != 0
+    prefer_contains: true # Use contains() instead of indexOf != -1
+
+    # FUNCTION AND METHOD RULES
+    prefer_function_declarations_over_variables: true
+    unnecessary_lambdas: true # Remove unnecessary lambda functions
+    prefer_expression_function_bodies: true # Use => for simple functions
+
+    # NULL SAFETY RULES
+    avoid_null_checks_in_equality_operators: true
+    unnecessary_null_aware_assignments: true # Remove unnecessary ??=
+    unnecessary_null_in_if_null_operators: true # Remove unnecessary ?? null
+
+    # COLLECTION RULES
+    prefer_collection_literals: true # Use [] instead of List()
+    unnecessary_parenthesis: true # Remove unnecessary parentheses
+
+    # CODE QUALITY RULES
+    avoid_redundant_argument_values: true # Remove default argument values
+    avoid_unnecessary_containers: true # Remove unnecessary Container widgets
+    sized_box_for_whitespace: true # Use SizedBox instead of Container for spacing
+    use_key_in_widget_constructors: true # Always use key parameter
+
+    # PERFORMANCE RULES
+    avoid_function_literals_in_foreach_calls: true
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
