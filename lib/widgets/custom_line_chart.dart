@@ -53,8 +53,6 @@ class _CustomLineChartState extends State<CustomLineChart> {
               scaleAxis: FlScaleAxis.horizontal,
               minScale: 100.0,
               maxScale: 100.0,
-              panEnabled: true,
-              scaleEnabled: true,
               trackpadScrollCausesScale: true,
               transformationController: _transformationController,
             ),
@@ -65,18 +63,15 @@ class _CustomLineChartState extends State<CustomLineChart> {
     );
   }
 
-  LineChartData _buildLineChartData(BuildContext context) {
-    return LineChartData(
+  LineChartData _buildLineChartData(BuildContext context) => LineChartData(
       gridData: _buildGridData(),
       titlesData: _buildTitlesData(),
       borderData: FlBorderData(show: false),
-      lineTouchData: LineTouchData(enabled: false),
+      lineTouchData: const LineTouchData(enabled: false),
       lineBarsData: _buildLineBarsData(),
     );
-  }
 
-  List<LineChartBarData> _buildLineBarsData() {
-    return List.generate(
+  List<LineChartBarData> _buildLineBarsData() => List.generate(
       widget.data.length,
       (index) => _buildLineChartBarData(
         data: widget.data[index],
@@ -84,27 +79,21 @@ class _CustomLineChartState extends State<CustomLineChart> {
         showAreaBelow: widget.data.length < 2,
       ),
     );
-  }
 
   LineChartBarData _buildLineChartBarData({
     required List<LineChartCoord> data,
     bool showLine = true,
     bool showAreaBelow = false,
-  }) {
-    return LineChartBarData(
+  }) => LineChartBarData(
       spots: data.map((coord) => FlSpot(coord.x, coord.y)).toList(),
-      isCurved: false,
       barWidth: showLine ? 3 : 0,
       color: widget.barColor,
 
       dotData: _buildDotData(data),
       belowBarData: _buildBelowBarData(showAreaBelow),
     );
-  }
 
-  FlDotData _buildDotData(List<LineChartCoord> data) {
-    return FlDotData(
-      show: true,
+  FlDotData _buildDotData(List<LineChartCoord> data) => FlDotData(
       getDotPainter: (spot, percent, barData, index) {
         final coord = data[index];
         return FlDotCirclePainter(
@@ -115,18 +104,13 @@ class _CustomLineChartState extends State<CustomLineChart> {
         );
       },
     );
-  }
 
-  BarAreaData _buildBelowBarData(bool showAreaBelow) {
-    return BarAreaData(
+  BarAreaData _buildBelowBarData(bool showAreaBelow) => BarAreaData(
       show: showAreaBelow,
       color: widget.barColor.withValues(alpha: 0.1),
     );
-  }
 
-  FlGridData _buildGridData() {
-    return FlGridData(
-      show: true,
+  FlGridData _buildGridData() => FlGridData(
       drawHorizontalLine: false,
       verticalInterval: 1,
       getDrawingVerticalLine:
@@ -135,38 +119,31 @@ class _CustomLineChartState extends State<CustomLineChart> {
             strokeWidth: 0.5,
           ),
     );
-  }
 
-  FlTitlesData _buildTitlesData() {
-    return FlTitlesData(
-      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+  FlTitlesData _buildTitlesData() => FlTitlesData(
+      rightTitles: const AxisTitles(),
+      topTitles: const AxisTitles(),
       bottomTitles: _buildBottomTitles(),
       leftTitles: _buildLeftTitles(),
     );
-  }
 
-  AxisTitles _buildBottomTitles() {
-    return AxisTitles(
+  AxisTitles _buildBottomTitles() => AxisTitles(
       sideTitles: SideTitles(
         showTitles: true,
         reservedSize: 30,
         interval: 1,
-        getTitlesWidget: (value, meta) => _buildBottomTitleWidget(value, meta),
+        getTitlesWidget: _buildBottomTitleWidget,
       ),
     );
-  }
 
-  AxisTitles _buildLeftTitles() {
-    return AxisTitles(
+  AxisTitles _buildLeftTitles() => AxisTitles(
       sideTitles: SideTitles(
         showTitles: true,
         interval: 1,
         reservedSize: 30,
-        getTitlesWidget: (value, meta) => _buildLeftTitleWidget(value, meta),
+        getTitlesWidget: _buildLeftTitleWidget,
       ),
     );
-  }
 
   Widget _buildBottomTitleWidget(double value, TitleMeta meta) {
     final index = value.toInt();
@@ -184,8 +161,7 @@ class _CustomLineChartState extends State<CustomLineChart> {
     );
   }
 
-  Widget _buildLeftTitleWidget(double value, TitleMeta meta) {
-    return SideTitleWidget(
+  Widget _buildLeftTitleWidget(double value, TitleMeta meta) => SideTitleWidget(
       meta: meta,
       space: 6,
       child:
@@ -196,5 +172,4 @@ class _CustomLineChartState extends State<CustomLineChart> {
               )
               : const SizedBox.shrink(),
     );
-  }
 }

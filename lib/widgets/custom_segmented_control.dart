@@ -22,7 +22,7 @@ class CustomSegmentedControl<T extends Enum> extends StatelessWidget {
       padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.withValues(alpha: .3), width: 1),
+        border: Border.all(color: Colors.grey.withValues(alpha: .3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

@@ -18,12 +18,10 @@ class AppRoute {
     String? title,
     String? subtitle,
     IconData? icon,
-  }) {
-    return AppRoute(
+  }) => AppRoute(
       path: path ?? this.path,
       title: title ?? this.title,
       subtitle: subtitle ?? this.subtitle,
       icon: icon ?? this.icon,
     );
-  }
 }

@@ -16,13 +16,11 @@ class _CustomTabsScreenState extends State<CustomTabsScreen> {
   Filter selectedFilter = Filter.one;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Custom Tabs Screen')),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 40),
 
@@ -31,7 +29,7 @@ class _CustomTabsScreenState extends State<CustomTabsScreen> {
               options: Filter.values,
               selectedValue: selectedFilter,
               onChanged: (filter) => setState(() => selectedFilter = filter),
-              labelBuilder: (filter) => _getFilterLabel(filter),
+              labelBuilder: _getFilterLabel,
             ),
 
             const SizedBox(height: 40),
@@ -53,7 +51,6 @@ class _CustomTabsScreenState extends State<CustomTabsScreen> {
         ),
       ),
     );
-  }
 
   String _getFilterLabel(Filter filter) => switch (filter) {
     Filter.one => 'Filter One',

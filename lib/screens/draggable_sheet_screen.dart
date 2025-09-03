@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_test/widgets/draggable_bottom_sheet.dart';
 
-class NestedScreen extends StatelessWidget {
-  static const name = 'nested_screen';
+class DraggableSheetScreen extends StatelessWidget {
+  static const name = 'draggable_sheet_screen';
 
-  const NestedScreen({super.key});
+  const DraggableSheetScreen({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(

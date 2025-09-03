@@ -80,7 +80,7 @@ class ChartScreen extends StatelessWidget {
                       ],
                     ),
                   ],
-                  xAxisLabels: ['Jan', 'Feb', 'Mar'],
+                  xAxisLabels: const ['Jan', 'Feb', 'Mar'],
                 ),
 
                 const SizedBox(height: 10),
@@ -89,7 +89,7 @@ class ChartScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 CustomSegmentedBar(
-                  values: [20.0, 25.0, 15.0, 30.0, 10.0],
+                  values: const [20.0, 25.0, 15.0, 30.0, 10.0],
                   colors: [
                     colors.primary,
                     colors.secondary,

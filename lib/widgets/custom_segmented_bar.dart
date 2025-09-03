@@ -14,8 +14,7 @@ class CustomSegmentedBar extends StatelessWidget {
        );
 
   @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
+  Widget build(BuildContext context) => ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Row(
         children: List.generate(values.length, (i) {
@@ -63,5 +62,4 @@ class CustomSegmentedBar extends StatelessWidget {
         }),
       ),
     );
-  }
 }

@@ -33,8 +33,7 @@ class _ExpandableListItem extends StatelessWidget {
   const _ExpandableListItem({required this.item});
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
+  Widget build(BuildContext context) => Padding(
       padding: const EdgeInsets.only(bottom: 10.0),
       child: Column(
         children: [
@@ -56,5 +55,4 @@ class _ExpandableListItem extends StatelessWidget {
         ],
       ),
     );
-  }
 }

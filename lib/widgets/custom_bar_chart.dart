@@ -28,8 +28,7 @@ class _CustomBarChartState extends State<CustomBarChart> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
+  Widget build(BuildContext context) => AspectRatio(
       aspectRatio: 2.1,
       child: Screenshot(
         controller: widget.screenshotController ?? _localController,
@@ -39,21 +38,16 @@ class _CustomBarChartState extends State<CustomBarChart> {
         ),
       ),
     );
-  }
 
-  BarChartData _buildBarChartData(BuildContext context) {
-    return BarChartData(
+  BarChartData _buildBarChartData(BuildContext context) => BarChartData(
       gridData: _buildGridData(),
       titlesData: _buildTitlesData(),
       borderData: FlBorderData(show: false),
-      barTouchData: BarTouchData(enabled: false),
+      barTouchData: const BarTouchData(enabled: false),
       barGroups: widget.data,
     );
-  }
 
-  FlGridData _buildGridData() {
-    return FlGridData(
-      show: true,
+  FlGridData _buildGridData() => FlGridData(
       drawHorizontalLine: false,
       verticalInterval: 1,
       getDrawingVerticalLine:
@@ -62,38 +56,31 @@ class _CustomBarChartState extends State<CustomBarChart> {
             strokeWidth: 0.5,
           ),
     );
-  }
 
-  FlTitlesData _buildTitlesData() {
-    return FlTitlesData(
-      rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-      topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+  FlTitlesData _buildTitlesData() => FlTitlesData(
+      rightTitles: const AxisTitles(),
+      topTitles: const AxisTitles(),
       bottomTitles: _buildBottomTitles(),
       leftTitles: _buildLeftTitles(),
     );
-  }
 
-  AxisTitles _buildBottomTitles() {
-    return AxisTitles(
+  AxisTitles _buildBottomTitles() => AxisTitles(
       sideTitles: SideTitles(
         showTitles: true,
         reservedSize: 30,
         interval: 1,
-        getTitlesWidget: (value, meta) => _buildBottomTitleWidget(value, meta),
+        getTitlesWidget: _buildBottomTitleWidget,
       ),
     );
-  }
 
-  AxisTitles _buildLeftTitles() {
-    return AxisTitles(
+  AxisTitles _buildLeftTitles() => AxisTitles(
       sideTitles: SideTitles(
         showTitles: true,
         interval: 1,
         reservedSize: 30,
-        getTitlesWidget: (value, meta) => _buildLeftTitleWidget(value, meta),
+        getTitlesWidget: _buildLeftTitleWidget,
       ),
     );
-  }
 
   Widget _buildBottomTitleWidget(double value, TitleMeta meta) {
     final index = value.toInt();
@@ -111,8 +98,7 @@ class _CustomBarChartState extends State<CustomBarChart> {
     );
   }
 
-  Widget _buildLeftTitleWidget(double value, TitleMeta meta) {
-    return SideTitleWidget(
+  Widget _buildLeftTitleWidget(double value, TitleMeta meta) => SideTitleWidget(
       meta: meta,
       space: 6,
       child:
@@ -123,5 +109,4 @@ class _CustomBarChartState extends State<CustomBarChart> {
               )
               : const SizedBox.shrink(),
     );
-  }
 }

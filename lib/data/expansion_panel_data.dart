@@ -1,9 +1,7 @@
 import 'package:widgets_test/entities/entities.dart';
 
 class ExpansionPanelData {
-  static List<ExpansionItem> generateItems([int numberOfItems = 10]) {
-    return List<ExpansionItem>.generate(numberOfItems, (int index) {
-      return ExpansionItem(
+  static List<ExpansionItem> generateItems([int numberOfItems = 10]) => List<ExpansionItem>.generate(numberOfItems, (int index) => ExpansionItem(
         header: 'This is item number $index',
         children: [
           ExpansionItemChild(
@@ -16,7 +14,5 @@ class ExpansionPanelData {
           ),
         ],
         isExpanded: index.isEven, // Example logic for expansion
-      );
-    });
-  }
+      ));
 }

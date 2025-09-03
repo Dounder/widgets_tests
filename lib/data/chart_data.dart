@@ -110,7 +110,7 @@ class ChartData {
     // Group points by x coordinate and find max y for each x
     final Map<double, LineChartCoord> maxPointsByX = {};
 
-    for (var point in points) {
+    for (final point in points) {
       if (!maxPointsByX.containsKey(point.x) ||
           point.y > maxPointsByX[point.x]!.y) {
         maxPointsByX[point.x] = point;
@@ -135,9 +135,7 @@ class ChartData {
         .toList();
   }
 
-  static List<String> getLabelsX() {
-    return points.map((e) => e.labelX).toSet().toList();
-  }
+  static List<String> getLabelsX() => points.map((e) => e.labelX).toSet().toList();
 
   static List<double> getSegmentedBarValues() {
     final random = Random();
@@ -145,13 +143,13 @@ class ChartData {
     final segmentCount = random.nextInt(5) + 1;
 
     // Create list with random values
-    List<double> values = [];
+    final List<double> values = [];
     double remaining = 100.0;
 
     // Generate n-1 random values
     for (int i = 0; i < segmentCount - 1; i++) {
       // Get random portion of remaining value
-      double maxPortion = remaining * 0.8; // Prevent tiny last segment
+      final double maxPortion = remaining * 0.8; // Prevent tiny last segment
       double value = random.nextDouble() * maxPortion;
       value = double.parse(value.toStringAsFixed(1)); // Round to 1 decimal
       values.add(value);

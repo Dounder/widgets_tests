@@ -3,23 +3,23 @@ import 'package:widgets_test/entities/entities.dart';
 import 'package:widgets_test/screens/screens.dart';
 
 final List<AppRoute> appRoutes = [
-  AppRoute(path: MapScreen.name, title: 'Map', icon: Icons.map),
-  AppRoute(
+  const AppRoute(path: MapScreen.name, title: 'Map', icon: Icons.map),
+  const AppRoute(
     path: ChartScreen.name,
     title: 'Charts',
     icon: Icons.show_chart_rounded,
   ),
-  AppRoute(
+  const AppRoute(
     path: ExpandableList.name,
     title: 'Expandable List',
     icon: Icons.list_rounded,
   ),
-  AppRoute(
-    path: NestedScreen.name,
-    title: 'Nested Screen',
-    icon: Icons.picture_in_picture_alt_rounded,
+  const AppRoute(
+    path: DraggableSheetScreen.name,
+    title: 'Draggable Sheet',
+    icon: Icons.drag_handle_rounded,
   ),
-  AppRoute(
+  const AppRoute(
     path: CustomTabsScreen.name,
     title: 'Custom Tabs',
     icon: Icons.tab_rounded,

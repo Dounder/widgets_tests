@@ -4,6 +4,6 @@ import 'package:widgets_test/blocs/blocs.dart';
 final locator = GetIt.instance;
 
 void setupLocator() {
-  locator.registerLazySingleton(() => ThemeCubit());
-  locator.registerFactory(() => NestedNavigationCubit());
+  locator.registerLazySingleton(ThemeCubit.new);
+  locator.registerFactory(NestedNavigationCubit.new);
 }
