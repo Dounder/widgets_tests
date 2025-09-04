@@ -6,7 +6,9 @@ class AppTheme {
   const AppTheme({this.darkMode = false});
 
   ThemeData get() => ThemeData(
-    brightness: darkMode ? Brightness.dark : Brightness.light,
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.indigo,
+      brightness: darkMode ? Brightness.dark : Brightness.light,
+    ),
   );
 }

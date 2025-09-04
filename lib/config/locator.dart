@@ -5,5 +5,4 @@ final locator = GetIt.instance;
 
 void setupLocator() {
   locator.registerLazySingleton(ThemeCubit.new);
-  locator.registerFactory(NestedNavigationCubit.new);
 }

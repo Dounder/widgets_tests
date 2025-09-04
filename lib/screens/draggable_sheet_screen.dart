@@ -47,33 +47,37 @@ class DraggableSheetScreen extends StatelessWidget {
         // Draggable panel using the reusable widget
         DraggableBottomSheet(
           builder:
-              (context, scrollController) => ListView.builder(
-                controller: scrollController,
-                padding: const EdgeInsets.all(16),
-                itemCount: 20,
-                itemBuilder:
-                    (context, index) => Card(
-                      margin: const EdgeInsets.only(bottom: 12),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.blue,
-                          child: Text('${index + 1}'),
+              (context, scrollController) => [
+                SliverPadding(
+                  padding: const EdgeInsets.all(16),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) => Card(
+                        margin: const EdgeInsets.only(bottom: 12),
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Colors.blue,
+                            child: Text('${index + 1}'),
+                          ),
+                          title: Text('Item ${index + 1}'),
+                          subtitle: Text(
+                            'This is the subtitle for item ${index + 1}',
+                          ),
+                          trailing: const Icon(Icons.arrow_forward_ios),
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('Tapped on Item ${index + 1}'),
+                              ),
+                            );
+                          },
                         ),
-                        title: Text('Item ${index + 1}'),
-                        subtitle: Text(
-                          'This is the subtitle for item ${index + 1}',
-                        ),
-                        trailing: const Icon(Icons.arrow_forward_ios),
-                        onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Tapped on Item ${index + 1}'),
-                            ),
-                          );
-                        },
                       ),
+                      childCount: 20,
                     ),
-              ),
+                  ),
+                ),
+              ],
         ),
       ],
     ),

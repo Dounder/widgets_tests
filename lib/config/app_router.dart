@@ -1,7 +1,4 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:widgets_test/blocs/blocs.dart';
-import 'package:widgets_test/config/locator.dart';
 import 'package:widgets_test/screens/screens.dart';
 
 final appRouter = GoRouter(initialLocation: '/', routes: _buildRoutes());
@@ -30,15 +27,16 @@ List<RouteBase> _buildRoutes() => [
   GoRoute(
     path: '/draggable_sheet',
     name: DraggableSheetScreen.name,
-    builder:
-        (context, state) => BlocProvider(
-          create: (_) => locator<NestedNavigationCubit>(),
-          child: const DraggableSheetScreen(),
-        ),
+    builder: (context, state) => const DraggableSheetScreen(),
   ),
   GoRoute(
     path: '/custom_tabs',
     name: CustomTabsScreen.name,
     builder: (context, state) => const CustomTabsScreen(),
+  ),
+  GoRoute(
+    path: '/nested_navigation',
+    name: NestedNavigationScreen.name,
+    builder: (context, state) => const NestedNavigationScreen(),
   ),
 ];

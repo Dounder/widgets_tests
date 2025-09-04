@@ -24,4 +24,9 @@ final List<AppRoute> appRoutes = [
     title: 'Custom Tabs',
     icon: Icons.tab_rounded,
   ),
+  const AppRoute(
+    path: NestedNavigationScreen.name,
+    title: 'Nested Navigation',
+    icon: Icons.picture_in_picture_alt_rounded,
+  ),
 ];
