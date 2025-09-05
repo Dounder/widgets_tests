@@ -10,14 +10,16 @@ class DraggableBottomSheet extends StatelessWidget {
   )
   builder;
   final bool showDragHandle;
+  final List<double> snapSizes;
 
   const DraggableBottomSheet({
     super.key,
     required this.builder,
     this.initialChildSize = 0.4,
-    this.minChildSize = 0.1,
-    this.maxChildSize = 0.9,
+    this.minChildSize = 0.15,
+    this.maxChildSize = 1,
     this.showDragHandle = true,
+    this.snapSizes = const [.15, 0.4, 1],
   });
 
   @override
@@ -25,6 +27,8 @@ class DraggableBottomSheet extends StatelessWidget {
     initialChildSize: initialChildSize,
     minChildSize: minChildSize,
     maxChildSize: maxChildSize,
+    snapSizes: snapSizes,
+    snap: true,
     builder:
         (context, scrollController) => Container(
           clipBehavior: Clip.antiAlias,
